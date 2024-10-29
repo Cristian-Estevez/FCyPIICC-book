@@ -1,0 +1,37 @@
+Primer Módulo:
+
+Contenido:
+Fundamentos de Ciberseguridad:
+
+    Unidad 01 - Seguridad y Gestión de riesgos: 
+        Introducción; 
+        Sistemas de gestión de seguridad de la información; 
+        Políticas de seguridad; 
+        Análisis de riesgos; 
+        Seguridad de activos;
+
+    Unidad 02 - Redes y comunicaciones: 
+        Diseño de redes; 
+        Dispositivos de seguridad en redes
+
+    Unidad 03 - Evaluaciones de seguridad: 
+        Intentos de Penetración; 
+        Auditoría y cumplimiento; 
+        Control de accesos;
+
+    Unidad 04 - Desarrollo de software: 
+        Ciclo de Desarrollo;
+
+
+
+
+
+videos:
+gestion de riesgos: https://www.youtube.com/watch?v=hxiwGkhhPlc
+apetito de riesgo: https://www.youtube.com/watch?v=lHkFisP8oNo
+threats manager studio: https://threatsmanager.com/
+
+tener bien claro para el exámen:
+    leer la PSI modelo y políticas 
+    ejercicio de políticas
+    diagrama de red y analizar dbilidades de diseño, lugares de ubicación de elementos de seguridad

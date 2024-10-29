@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Consideraciones del diseño de red</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">Introducción</a></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded "><a href="../../first-module.html"><strong aria-hidden="true">1.</strong> Primer módulo</a></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded "><a href="../../unit-1/index.html"><strong aria-hidden="true">2.</strong> Seguridad y Gestión de riesgos</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../unit-1/glosary.html"><strong aria-hidden="true">2.1.</strong> Conceptos importantes</a></li><li class="chapter-item expanded "><a href="../../unit-1/security-controls.html"><strong aria-hidden="true">2.2.</strong> Controles de seguridad</a></li><li class="chapter-item expanded "><a href="../../unit-1/roles-and-responsibilities.html"><strong aria-hidden="true">2.3.</strong> Roles y responsabilidades</a></li><li class="chapter-item expanded "><a href="../../unit-1/activities/index.html"><strong aria-hidden="true">2.4.</strong> Actividades</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../unit-1/activities/01-activity.html"><strong aria-hidden="true">2.4.1.</strong> Actividad 1</a></li><li class="chapter-item expanded "><a href="../../unit-1/activities/02-activity.html"><strong aria-hidden="true">2.4.2.</strong> Actividad 2</a></li></ol></li><li class="chapter-item expanded "><a href="../../unit-1/extra-reading.html"><strong aria-hidden="true">2.5.</strong> Lectura complementaria</a></li><li class="chapter-item expanded "><a href="../../unit-1/security-and-risk-management/index.html"><strong aria-hidden="true">2.6.</strong> Seguridad y gestión de riesgos</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../unit-1/security-and-risk-management/security-policies.html"><strong aria-hidden="true">2.6.1.</strong> Definiciones</a></li><li class="chapter-item expanded "><a href="../../unit-1/security-and-risk-management/risk-management/index.html"><strong aria-hidden="true">2.6.2.</strong> Gestión de riesgo</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../unit-1/security-and-risk-management/risk-management/risk-management.html"><strong aria-hidden="true">2.6.2.1.</strong> Gestión de riesgo</a></li><li class="chapter-item expanded "><a href="../../unit-1/security-and-risk-management/risk-management/risk-analysys/index.html"><strong aria-hidden="true">2.6.2.2.</strong> Etapas de análisis de riesgo</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../unit-1/security-and-risk-management/risk-management/risk-analysys/asset-identification-and-eval.html"><strong aria-hidden="true">2.6.2.2.1.</strong> Identificación y evaluación de los activos</a></li><li class="chapter-item expanded "><a href="../../unit-1/security-and-risk-management/risk-management/risk-analysys/threat-identification-and-analisys.html"><strong aria-hidden="true">2.6.2.2.2.</strong> Identificación y análisis de amenazas</a></li><li class="chapter-item expanded "><a href="../../unit-1/security-and-risk-management/risk-management/risk-analysys/vulns-identification-and-analisys.html"><strong aria-hidden="true">2.6.2.2.3.</strong> Identificación y análisis de vulnerabilidades</a></li><li class="chapter-item expanded "><a href="../../unit-1/security-and-risk-management/risk-management/risk-analysys/risk-evaluation-methods/index.html"><strong aria-hidden="true">2.6.2.2.4.</strong> Evaluación del riesgo</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../unit-1/security-and-risk-management/risk-management/risk-analysys/risk-evaluation-methods/quantitative.html"><strong aria-hidden="true">2.6.2.2.4.1.</strong> Método cuantitativo</a></li><li class="chapter-item expanded "><a href="../../unit-1/security-and-risk-management/risk-management/risk-analysys/risk-evaluation-methods/qualitative.html"><strong aria-hidden="true">2.6.2.2.4.2.</strong> Método cualitativo</a></li></ol></li><li class="chapter-item expanded "><a href="../../unit-1/security-and-risk-management/risk-management/risk-analysys/control-recomendations.html"><strong aria-hidden="true">2.6.2.2.5.</strong> Recomendaciones de control</a></li><li class="chapter-item expanded "><a href="../../unit-1/security-and-risk-management/risk-management/risk-analysys/results-documentation.html"><strong aria-hidden="true">2.6.2.2.6.</strong> Documentación de resultados</a></li></ol></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../unit-1/security-management/index.html"><strong aria-hidden="true">2.7.</strong> Gestión de la seguridad - Elaboración de políticas</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../unit-1/security-management/refered-frameworks.html"><strong aria-hidden="true">2.7.1.</strong> Marcos de referencia</a></li></ol></li><li class="chapter-item expanded "><a href="../../unit-1/security-management-system/index.html"><strong aria-hidden="true">2.8.</strong> Sistema de gestión de la seguridad de la información</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../unit-1/security-management-system/composed-by.html"><strong aria-hidden="true">2.8.1.</strong> Lo componen</a></li></ol></li><li class="chapter-item expanded "><a href="../../unit-1/security-controls/index.html"><strong aria-hidden="true">2.9.</strong> Controles de seguridad</a></li><li class="chapter-item expanded "><a href="../../unit-1/policies/index.html"><strong aria-hidden="true">2.10.</strong> Políticas</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../unit-1/activities/03-activity.html"><strong aria-hidden="true">2.10.1.</strong> Actividad 3</a></li></ol></li><li class="chapter-item expanded "><a href="../../unit-1/committee/index.html"><strong aria-hidden="true">2.11.</strong> Comite</a></li></ol></li><li class="chapter-item expanded "><li class="spacer"></li><li class="chapter-item expanded "><a href="../../unit-2/intro-to-devices.html"><strong aria-hidden="true">3.</strong> Redes y comunicaciones</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../unit-2/intro-to-devices.html"><strong aria-hidden="true">3.1.</strong> Introducción a los dispositivos de seguridad de red</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../unit-2/devices/routers.html"><strong aria-hidden="true">3.1.1.</strong> Routers</a></li><li class="chapter-item expanded "><a href="../../unit-2/devices/firewalls.html"><strong aria-hidden="true">3.1.2.</strong> Firewalls (características y soluciones)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../unit-2/devices/firewalls/packet-filter-based.html"><strong aria-hidden="true">3.1.2.1.</strong> Basados en Filtrado de paquetes</a></li><li class="chapter-item expanded "><a href="../../unit-2/devices/firewalls/circuit-level-gateway.html"><strong aria-hidden="true">3.1.2.2.</strong> Basados en Nivel de circuito</a></li><li class="chapter-item expanded "><a href="../../unit-2/devices/firewalls/application-level-gateway.html"><strong aria-hidden="true">3.1.2.3.</strong> Basados en Aplicación</a></li><li class="chapter-item expanded "><a href="../../unit-2/devices/firewalls/statefull-multi-level.html"><strong aria-hidden="true">3.1.2.4.</strong> Basados en Estado de niveles múltiples</a></li></ol></li><li class="chapter-item expanded "><a href="../../unit-2/devices/intrussion-prevention-systems.html"><strong aria-hidden="true">3.1.3.</strong> Sistema de prevensión de intruciones (IPS)</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../unit-2/devices/intrussion-prevention-system/detection-based.html"><strong aria-hidden="true">3.1.3.1.</strong> Clasificación según detección</a></li><li class="chapter-item expanded "><a href="../../unit-2/devices/intrussion-prevention-system/implementation-based.html"><strong aria-hidden="true">3.1.3.2.</strong> Clasificación según implementación</a></li></ol></li><li class="chapter-item expanded "><a href="../../unit-2/devices/virtual-private-network.html"><strong aria-hidden="true">3.1.4.</strong> Red privada virtual VPN</a></li><li class="chapter-item expanded "><a href="../../unit-2/devices/web-application-firewall.html"><strong aria-hidden="true">3.1.5.</strong> Firewall de aplicaciones WEB</a></li><li class="chapter-item expanded "><a href="../../unit-2/devices/database-firewall.html"><strong aria-hidden="true">3.1.6.</strong> Firewall de Bases de datos</a></li><li class="chapter-item expanded "><a href="../../unit-2/devices/security-information-and-event-management.html"><strong aria-hidden="true">3.1.7.</strong> Información de seguridad y administración de eventos SIEM</a></li></ol></li><li class="chapter-item expanded "><a href="../../unit-2/network/index.html"><strong aria-hidden="true">3.2.</strong> Diseño de redes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../unit-2/network/conectivity-and-threats.html"><strong aria-hidden="true">3.2.1.</strong> Conectividad y potenciales amenazas</a></li><li class="chapter-item expanded "><a href="../../unit-2/network/network-administration.html"><strong aria-hidden="true">3.2.2.</strong> Administración de la red</a></li><li class="chapter-item expanded "><a href="../../unit-2/network/access-control.html"><strong aria-hidden="true">3.2.3.</strong> Control de acceso</a></li><li class="chapter-item expanded "><a href="../../unit-2/network/network-design-considerations.html" class="active"><strong aria-hidden="true">3.2.4.</strong> Consideraciones del diseño de red</a></li><li class="chapter-item expanded "><a href="../../unit-2/network/network-design-process.html"><strong aria-hidden="true">3.2.5.</strong> Proceso de diseño de una red</a></li><li class="chapter-item expanded "><a href="../../unit-2/network/network-design-level-ninja.html"><strong aria-hidden="true">3.2.6.</strong> Diseño de red nivel NINJA</a></li><li class="chapter-item expanded "><a href="../../unit-2/network/cloud-services.html"><strong aria-hidden="true">3.2.7.</strong> La nube</a></li><li class="chapter-item expanded "><a href="../../unit-2/network/virtual-environments.html"><strong aria-hidden="true">3.2.8.</strong> Diseño de entornos virtuales</a></li></ol></li><li class="chapter-item expanded "><a href="../../unit-2/threat-modeling/index.html"><strong aria-hidden="true">3.3.</strong> Modelado de amenazas</a></li><li class="chapter-item expanded "><a href="../../unit-2/containers/index.html"><strong aria-hidden="true">3.4.</strong> Contenedores</a></li></ol></li><li class="chapter-item expanded "><li class="spacer"></li><li class="chapter-item expanded "><a href="../../unit-3/index.html"><strong aria-hidden="true">4.</strong> Evaluaciones de seguridad</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../unit-3/pentests/index.html"><strong aria-hidden="true">4.1.</strong> Intentos de Penetración</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../unit-3/pentests/planning-and-methodology.html"><strong aria-hidden="true">4.1.1.</strong> Planificación y metodología</a></li><li class="chapter-item expanded "><a href="../../unit-3/pentests/recon-and-discovery.html"><strong aria-hidden="true">4.1.2.</strong> Exploración y descubrimiento</a></li><li class="chapter-item expanded "><a href="../../unit-3/pentests/vulnerabilities-analisys.html"><strong aria-hidden="true">4.1.3.</strong> Análisis de vulnerabilidades</a></li><li class="chapter-item expanded "><a href="../../unit-3/pentests/vulnerabilities-exploitation.html"><strong aria-hidden="true">4.1.4.</strong> Explotación de vulnerabilidades</a></li><li class="chapter-item expanded "><a href="../../unit-3/pentests/reporting.html"><strong aria-hidden="true">4.1.5.</strong> Reportes e informes</a></li></ol></li><li class="chapter-item expanded "><a href="../../unit-3/access-control/index.html"><strong aria-hidden="true">4.2.</strong> Control de accesos</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../unit-3/access-control/access-control-types.html"><strong aria-hidden="true">4.2.1.</strong> Tipos de control de accesos</a></li><li class="chapter-item expanded "><a href="../../unit-3/access-control/access-control-timing-classification.html"><strong aria-hidden="true">4.2.2.</strong> Clasificación por momento de acción</a></li><li class="chapter-item expanded "><a href="../../unit-3/access-control/privacy-and-access-control.html"><strong aria-hidden="true">4.2.3.</strong> Privacidad y control de accesos</a></li><li class="chapter-item expanded "><a href="../../unit-3/access-control/access-control-models.html"><strong aria-hidden="true">4.2.4.</strong> Modelos de control de accesos</a></li><li class="chapter-item expanded "><a href="../../unit-3/access-control/identification-authentication-authorization.html"><strong aria-hidden="true">4.2.5.</strong> Identificación, Autenticación, Autorización </a></li></ol></li></ol></li><li class="chapter-item expanded "><li class="spacer"></li><li class="chapter-item expanded "><a href="../../unit-4/index.html"><strong aria-hidden="true">5.</strong> Desarrollo de software</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../unit-4/requirements.html"><strong aria-hidden="true">5.1.</strong> Requerimientos</a></li><li class="chapter-item expanded "><a href="../../unit-4/design.html"><strong aria-hidden="true">5.2.</strong> Diseño</a></li><li class="chapter-item expanded "><a href="../../unit-4/code.html"><strong aria-hidden="true">5.3.</strong> Código</a></li><li class="chapter-item expanded "><a href="../../unit-4/tests.html"><strong aria-hidden="true">5.4.</strong> Pruebas</a></li><li class="chapter-item expanded "><a href="../../unit-4/deploy.html"><strong aria-hidden="true">5.5.</strong> Despliegue</a></li><li class="chapter-item expanded "><a href="../../unit-4/maintenance.html"><strong aria-hidden="true">5.6.</strong> Mantenimiento</a></li></ol></li><li class="chapter-item expanded "><li class="spacer"></li><li class="chapter-item expanded "><a href="../../summaries/index.html"><strong aria-hidden="true">6.</strong> Resumenes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../summaries/psi-modelo.html"><strong aria-hidden="true">6.1.</strong> PSI modelo</a></li></ol></li><li class="chapter-item expanded "><a href="../../videos/index.html"><strong aria-hidden="true">7.</strong> Videos de apoyo</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../videos/first-module/index.html"><strong aria-hidden="true">7.1.</strong> Primer módulo</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="consideraciones-del-diseño-de-red"><a class="header" href="#consideraciones-del-diseño-de-red">Consideraciones del diseño de red</a></h1>
+<h4 id="isolado-separación-y-compartimentalización"><a class="header" href="#isolado-separación-y-compartimentalización"><em><code>Isolado, separación y compartimentalización:</code></em></a></h4>
+<p>Con el isolado o aislamiento, la separación y compartimentalización, se busca asegurar que ante un incidente (falla, compromiso) en una parte del sistema, este quede reducido solo a esa porción de la red. Evitando fallas en otras partes o una progresión del compromiso.</p>
+<h3 id="políticas"><a class="header" href="#políticas"><em><code>Políticas:</code></em></a></h3>
+<p>La aplicación de políticas brinda la capacidad de aplicar el comportamiento permitido entre los sistemas conectados, las aplicaciones, los usuarios, las redes y subredes. El ejemplo más claro es el establecimiento de ACL (Access control lists).</p>
+<h3 id="identidad-y-confianza"><a class="header" href="#identidad-y-confianza"><em><code>Identidad y confianza:</code></em></a></h3>
+<p>Cuando nos referimos a identidad, nos referimos a la capacidad de un sistema para identificar a las entidades que acceden a un recurso. Se configura también un nivel de confianza otorgado a cada entidad según la necesidad (mínimo privilegio).</p>
+<h3 id="instrumentación-y-monitoreo"><a class="header" href="#instrumentación-y-monitoreo"><em><code>Instrumentación y monitoreo:</code></em></a></h3>
+<p>Se refiere a la capacidad de supervisar el comportamiento y uso de la red (sus recursos, sistemas, usuarios, tráfico), desarrollando la capacidad de detectar cualquier evento de seguridad.</p>
+<h3 id="correlación"><a class="header" href="#correlación"><em><code>Correlación:</code></em></a></h3>
+<p>Es la capacidad de vincular los eventos detectados en la red. Permite interpretar, analizar y clasificar la información obtenida del monitoreo. Por medio de ella se pueden contextualizar los eventos, determinar un escenario o situación dada. Cuanto mejor sea la <strong><code>calidad</code></strong> del monitoreo (<em>no cantidad</em>), mejor será la capacidad de acción.</p>
+<h3 id="resiliencia"><a class="header" href="#resiliencia"><em><code>Resiliencia:</code></em></a></h3>
+<p>Es la capacidad de recuperación posterior a un incidente. Indica la madurez de una arquitectura para volver a un estado de operatividad ante situaciones anómalas, no controladas o inseperadas. Ej: redundancia, disponibilidad, capacidad operativa, planes de contigencia, respuesta a incidentes, etc</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../unit-2/network/access-control.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../unit-2/network/network-design-process.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../unit-2/network/access-control.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../unit-2/network/network-design-process.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
