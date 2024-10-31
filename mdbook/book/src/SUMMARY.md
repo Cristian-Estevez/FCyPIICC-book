@@ -113,3 +113,16 @@
 
 - [Videos de apoyo](./videos/README.md)
   - [Primer módulo](./videos/first-module/README.md)
+
+---
+
+- [Segundo módulo](./second-module.md)
+
+---
+
+- [Introducción a las Infraestructuras Críticas](./unit-6/critical-infraestructure-intro.md)
+
+  - [Definición](./unit-6/definition.md)
+  - [Componentes](./unit-6/components.md)
+  - [Redes IT](./unit-6/it-networks.md)
+  - [Amenazas y Vulnerabilidades](./unit-6/threats-and-vulnerabilities.md)
