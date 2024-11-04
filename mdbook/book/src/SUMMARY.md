@@ -126,3 +126,6 @@
   - [Componentes](./unit-6/components.md)
   - [Redes IT](./unit-6/it-networks.md)
   - [Amenazas y Vulnerabilidades](./unit-6/threats-and-vulnerabilities.md)
+  - [Continuidad de las Operaciones](./unit-6/buisiness-continuity.md)
+    - [Plan de continuidad de negocio](./unit-6/buisiness-continuity-plan.md)
+    - [Plan de recuperación de desastres](./unit-6/disaster-recovery-plan.md)
