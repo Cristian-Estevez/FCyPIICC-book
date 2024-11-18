@@ -129,3 +129,9 @@
   - [Continuidad de las Operaciones](./unit-6/buisiness-continuity.md)
     - [Plan de continuidad de negocio](./unit-6/buisiness-continuity-plan.md)
     - [Plan de recuperación de desastres](./unit-6/disaster-recovery-plan.md)
+    - [Centros de Datos](./unit-6/data-centers.md)
+    - [TIA - 942](./unit-6/tia-942.md)
+
+- [Gestion de incidentes](./unit-7/incident-management.md)
+  - [Equipos de respuesta a incidentes](./unit-7/incident-response-team.md)
+  - [Etapas en la gestión de incidentes](./unit-7/stages-for-incident-response.md)

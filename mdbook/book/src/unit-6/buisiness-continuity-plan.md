@@ -29,4 +29,18 @@ El plan de continuidad de negocio (Business continuity plan) define las acciones
 - Comité de BCP (Business continuity plan): dirige los procesos de planificación, implementación y pruebas del BCP.
 - Unidades funcionales: Participan en la implementación y las pruebas del plan.
 
-------- aca continuar página 37 del PPT
+### Evaluación del impacto en el negocio (BIA, Bussiness Impact Assesment):
+
+Conocido tambien como Evaluación de impacto en las actividades, el objetivo de esta evaluación es la de colaborar en la comprensión del grado de pérdida potencial que podría ocurrir a causa de la interrupción de las actividades.
+
+- Objetivos:
+
+  - Priorización en base a la críticidad de los procesos y sistemas.
+  - Estimación del tiempo máximo de improductividad tolerable (Maximum Tolerable Downtime).
+  - Requerimiento de recursos.
+
+- Tareas:
+  - Obtención de material necesario para realizar el análisis.
+  - Desarrollo de una evaluación de vulnerabilidades.
+  - Análisis de la información obtenida.
+  - Documentación y reporte de resultados y recomendaciones.
